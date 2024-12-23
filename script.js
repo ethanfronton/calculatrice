@@ -23,4 +23,15 @@ function calculer() {
     const nombre2 = parseFloat(document.getElementById('nombre2').value);
     const resultat = calculatrice(nombre1, nombre2, operateur);
     document.getElementById('resultat').value = resultat;
+
+    if(isNaN(nombre1) || isNaN(nombre2)) {
+        document.getElementById('resultat').value = 'Erreur: met un chiffre chef';
+    }
+}
+
+function reinitialiser() {
+    document.getElementById('nombre1').value = '';
+    document.getElementById('operation').value = '+';
+    document.getElementById('nombre2').value = '';
+    document.getElementById('resultat').value = '';
 }
